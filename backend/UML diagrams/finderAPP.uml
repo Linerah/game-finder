@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/Users/kevinlinera/Desktop/finder/src/main/java/com/game/finder</OriginalElement>
+  <nodes>
+    <node x="170.125" y="284.0">com.game.finder.repositories.PlayerRepository</node>
+    <node x="313.5041666666667" y="389.5">com.game.finder.configs.PlayerConfig</node>
+    <node x="29.50416666666669" y="378.0">com.game.finder.services.PlayerService</node>
+    <node x="0.0" y="508.0">com.game.finder.controllers.PlayerController</node>
+    <node x="92.57500000000002" y="0.0">com.game.finder.domain.Player</node>
+    <node x="511.5041666666666" y="0.0">com.game.finder.FinderApplication</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.game.finder.services.PlayerService" target="com.game.finder.repositories.PlayerRepository" relationship="TO_ONE">
+      <point x="66.0" y="-39.0" />
+      <point x="227.5041666666667" y="336.0" />
+      <point x="216.375" y="336.0" />
+      <point x="-46.25" y="15.0" />
+    </edge>
+    <edge source="com.game.finder.configs.PlayerConfig" target="com.game.finder.domain.Player" relationship="CREATE">
+      <point x="38.25" y="-27.5" />
+      <point x="428.2541666666667" y="356.0" />
+      <point x="395.2541666666667" y="356.0" />
+      <point x="395.2541666666667" y="263.0" />
+      <point x="343.82500000000005" y="263.0" />
+      <point x="83.75" y="116.0" />
+    </edge>
+    <edge source="com.game.finder.controllers.PlayerController" target="com.game.finder.domain.Player" relationship="DEPENDENCY">
+      <point x="-62.0" y="-39.0" />
+      <point x="62.0" y="487.0" />
+      <point x="119.0" y="487.0" />
+      <point x="119.0" y="477.0" />
+      <point x="19.00416666666669" y="477.0" />
+      <point x="19.00416666666669" y="263.0" />
+      <point x="156.2541666666667" y="263.0" />
+      <point x="156.2541666666667" y="253.0" />
+      <point x="176.32500000000002" y="253.0" />
+      <point x="-83.75" y="116.0" />
+    </edge>
+    <edge source="com.game.finder.services.PlayerService" target="com.game.finder.repositories.PlayerRepository" relationship="DEPENDENCY">
+      <point x="-66.0" y="-39.0" />
+      <point x="95.50416666666669" y="356.0" />
+      <point x="157.0" y="356.0" />
+      <point x="157.0" y="346.0" />
+      <point x="361.6291666666667" y="346.0" />
+      <point x="361.6291666666667" y="336.0" />
+      <point x="308.875" y="336.0" />
+      <point x="46.25" y="15.0" />
+    </edge>
+    <edge source="com.game.finder.repositories.PlayerRepository" target="com.game.finder.domain.Player" relationship="DEPENDENCY">
+      <point x="0.0" y="-15.0" />
+      <point x="262.625" y="263.0" />
+      <point x="156.25416666666666" y="263.0" />
+      <point x="156.2541666666667" y="253.0" />
+      <point x="176.32500000000002" y="253.0" />
+      <point x="-83.75" y="116.0" />
+    </edge>
+    <edge source="com.game.finder.controllers.PlayerController" target="com.game.finder.services.PlayerService" relationship="DEPENDENCY">
+      <point x="-62.0" y="-39.0" />
+      <point x="62.0" y="487.0" />
+      <point x="119.0" y="487.0" />
+      <point x="119.0" y="477.0" />
+      <point x="95.50416666666669" y="477.0" />
+      <point x="-66.0" y="39.0" />
+    </edge>
+    <edge source="com.game.finder.controllers.PlayerController" target="com.game.finder.services.PlayerService" relationship="TO_ONE">
+      <point x="62.0" y="-39.0" />
+      <point x="186.0" y="487.0" />
+      <point x="227.5041666666667" y="487.0" />
+      <point x="66.0" y="39.0" />
+    </edge>
+    <edge source="com.game.finder.services.PlayerService" target="com.game.finder.domain.Player" relationship="DEPENDENCY">
+      <point x="-66.0" y="-39.0" />
+      <point x="95.50416666666669" y="356.0" />
+      <point x="157.0" y="356.0" />
+      <point x="156.2541666666667" y="253.0" />
+      <point x="176.32500000000002" y="253.0" />
+      <point x="-83.75" y="116.0" />
+    </edge>
+    <edge source="com.game.finder.configs.PlayerConfig" target="com.game.finder.repositories.PlayerRepository" relationship="DEPENDENCY">
+      <point x="-38.25" y="-27.5" />
+      <point x="351.7541666666667" y="356.0" />
+      <point x="361.6291666666667" y="356.0" />
+      <point x="361.6291666666667" y="336.0" />
+      <point x="308.875" y="336.0" />
+      <point x="46.25" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.8712871287128713" showDependencies="true" x="351.0" y="293.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
