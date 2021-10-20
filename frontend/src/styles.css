@@ -2,3 +2,107 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/*P.S. css at rul is flagging as unknown, but tailwind still works.
+        we have to find a way so that the project ignores it. */
+/*      To fix the issue, download Tailwind CSS plugin in intelliJ*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+  @apply py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-400
+}
+
+body{
+  @apply bg-background-purple;
+}
+
+.hand-with-controller{
+  position: absolute;
+  width: 686.45px;
+  height: 609.19px;
+  left: 633.79px;
+  top: 296.58px;
+  border-radius: 89px;
+  transform: rotate(-0.55deg);
+}
+
+.about-container{
+  width: 1206px;
+  height: 560px;
+  top: 900px;
+  @apply mx-28 absolute flex shadow-2xl box-border bg-about-grey border-2 border-about-blue rounded-about-border ;
+}
+
+.about-person{
+  width: 422px;
+  height: 319px;
+  @apply relative left-24 top-1/4 rounded-md;
+}
+
+.about-tittle{
+  @apply relative left-60 top-28 font-sans text-6xl font-bold text-about-blue;
+}
+.about-text-container{
+  @apply relative flex-col;
+}
+.about-paragraph{
+  width: 438px;
+  height: 243px;
+  @apply relative left-60 top-36 font-sans text-base font-bold text-about-blue;
+}
+
+.main-tittle{
+  position: absolute;
+  width: 567px;
+  height: 200px;
+  left: 291px;
+  top: 300px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 110%;
+  /* or 53px */
+
+  display: flex;
+  align-items: center;
+
+  /* 4 */
+
+  color: #B8EBFA;
+
+}
+.main-paragraph{
+
+  position: absolute;
+  width: 418px;
+  height: 200px;
+  left: 309px;
+  top: 511px;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+}
+
+.main-logo{
+  position: absolute;
+  width: 162px;
+  height: 160px;
+  left: 210px;
+  top: 30px;
+  border-radius: 65px;
+}
+
+.nav-bar{
+  position: absolute;
+  width: 963px;
+  height: 63px;
+  left: 421px;
+  top: 60px;
+
+}
