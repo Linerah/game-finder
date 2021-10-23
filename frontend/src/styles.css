@@ -1,7 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 /*P.S. css at rul is flagging as unknown, but tailwind still works.
         we have to find a way so that the project ignores it. */
@@ -10,22 +6,23 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 @tailwind components;
 @tailwind utilities;
 
-.btn {
-  @apply py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-400
+@font-face {
+  font-family: WildWorld;
+  src: url("assets/fonts/WILD WORLD.otf") format("opentype");
 }
 
 body{
-  @apply bg-background-purple;
+  @apply bg-background-purple m-0 p-0 flex ;
 }
 
 .hand-with-controller{
   position: absolute;
   width: 686.45px;
   height: 609.19px;
-  left: 633.79px;
+  left: 300px;
   top: 296.58px;
-  border-radius: 89px;
   transform: rotate(-0.55deg);
+  z-index: 5;
 }
 
 .about-container{
@@ -41,12 +38,6 @@ body{
   @apply relative left-24 top-1/4 rounded-md;
 }
 
-.about-tittle{
-  @apply relative left-60 top-28 font-sans text-6xl font-bold text-about-blue;
-}
-.about-text-container{
-  @apply relative flex-col;
-}
 .about-paragraph{
   width: 438px;
   height: 243px;
@@ -55,18 +46,19 @@ body{
 
 .main-tittle{
   position: absolute;
-  width: 567px;
+
   height: 200px;
-  left: 291px;
+  width: 50%;
   top: 300px;
-  font-style: normal;
+  left: 50%;
+  margin-left: -360px;
   font-weight: normal;
-  font-size: 48px;
+  font-size: 40px;
   line-height: 110%;
+  font-family: WildWorld;
   /* or 53px */
 
-  display: flex;
-  align-items: center;
+
 
   /* 4 */
 
@@ -98,11 +90,63 @@ body{
   border-radius: 65px;
 }
 
-.nav-bar{
-  position: absolute;
-  width: 963px;
-  height: 63px;
-  left: 421px;
-  top: 60px;
-
+.nav-item{
+  font-family: WildWorld;
+  @apply
+  relative flex items-center justify-center
+  border-transparent border-2
+  rounded-2xl
+  h-12 w-32
+  pb-1.5 pt-1.5 pr-6 pl-6
+  ml-6 mr-6 mx-auto
+  text-xl not-italic bg-background-purple shadow-inner
+  hover:shadow-lg
+  hover:rounded-3xl
+  hover:bg-about-grey
+  hover:text-about-blue
+  hover:border-about-blue
+  transition-all ease-in-out duration-500
+  cursor-pointer;
 }
+
+.custom-shape-divider-top-1634946153 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1634946153 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 43px;
+}
+
+.custom-shape-divider-top-1634946153 .shape-fill {
+  fill: #9013FE;
+}
+
+.custom-shape-divider-bottom-1634946272 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-bottom-1634946272 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 128px;
+}
+
+.custom-shape-divider-bottom-1634946272 .shape-fill {
+  fill: #9013FE;
+}
+
