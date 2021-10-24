@@ -12,7 +12,16 @@
 }
 
 body{
-  @apply bg-background-purple m-0 p-0 flex ;
+  overflow-x: hidden;
+  @apply bg-background-purple m-0 p-0 ;
+}
+
+section{
+  @apply relative flex flex-col items-center justify-center;
+  min-height: 400px;
+  padding: 100px 20vw;
+  height: 100vh;
+  /*  cry remove the relative ;(*/
 }
 
 .hand-with-controller{
@@ -20,7 +29,7 @@ body{
   width: 686.45px;
   height: 609.19px;
   left: 300px;
-  top: 296.58px;
+  top: 345px;
   transform: rotate(-0.55deg);
   z-index: 5;
 }
@@ -28,67 +37,58 @@ body{
 .about-container{
   width: 1206px;
   height: 560px;
-  top: 900px;
-  @apply mx-28 absolute flex shadow-2xl box-border bg-about-grey border-2 border-about-blue rounded-about-border ;
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 2rem;
+  z-index: 2;
+  backdrop-filter: blur(2rem);
+  @apply flex flex-row justify-center items-center;
+  position: relative;
+
 }
+
+
 
 .about-person{
   width: 422px;
   height: 319px;
-  @apply relative left-24 top-1/4 rounded-md;
+  @apply rounded-md mr-24;
 }
 
 .about-paragraph{
+  font-family: sans-serif;
   width: 438px;
   height: 243px;
-  @apply relative left-60 top-36 font-sans text-base font-bold text-about-blue;
+  font-size: 20px;
+  @apply font-bold text-white pt-10;
+}
+
+.about-tittle{
+  font-family: WildWorld;
+  @apply  text-4xl font-bold text-test-blue animate-pulse;
 }
 
 .main-tittle{
-  position: absolute;
-
-  height: 200px;
-  width: 50%;
-  top: 300px;
-  left: 50%;
-  margin-left: -360px;
-  font-weight: normal;
   font-size: 40px;
   line-height: 110%;
   font-family: WildWorld;
-  /* or 53px */
-
-
-
-  /* 4 */
-
   color: #B8EBFA;
-
-}
-.main-paragraph{
-
-  position: absolute;
-  width: 418px;
-  height: 200px;
-  left: 309px;
-  top: 511px;
-
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 23px;
-  letter-spacing: -0.02em;
-  color: #FFFFFF;
 }
 
 .main-logo{
   position: absolute;
-  width: 162px;
+  width: 160px;
   height: 160px;
-  left: 210px;
-  top: 30px;
-  border-radius: 65px;
+  left: 12%;
+  top: 3%;
+  /*border-radius: 65px;*/
+  @apply rounded-full;
 }
+
 
 .nav-item{
   font-family: WildWorld;
@@ -147,6 +147,26 @@ body{
 }
 
 .custom-shape-divider-bottom-1634946272 .shape-fill {
+  fill: #9013FE;
+}
+
+.custom-shape-divider-top-1635000037 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1635000037 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+
+.custom-shape-divider-top-1635000037 .shape-fill {
   fill: #9013FE;
 }
 
