@@ -1,4 +1,4 @@
-package com.game.finder.domain;
+package com.game.finder.player;
 
 import javax.persistence.*;
 import java.io.Serializable;

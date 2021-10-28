@@ -1,7 +1,7 @@
-package com.game.finder.service;
+package com.game.finder.player;
 
-import com.game.finder.domain.Player;
-import com.game.finder.repositories.PlayerRepository;
+import com.game.finder.player.Player;
+import com.game.finder.player.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -40,7 +40,7 @@ public class PlayerService {
          if(!exists) {
             throw new
                     IllegalStateException("player with id " + playerId + "does not exists" );
-         };
+         }
          playerRepository.deleteById(playerId);
     }
 
@@ -52,7 +52,7 @@ public class PlayerService {
         if(!exists) {
             throw new
                     IllegalStateException("player with id " + playerId + "does not exists" );
-        };
+        }
         Player player = playerRepository.getById(playerId);
         if(name != null && name.length() > 0 && !Objects.equals(name, player.getName())){
             player.setName(name);

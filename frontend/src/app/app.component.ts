@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Player } from './domain/player';
-import { PlayerService } from './service/player.service';
+import { Player } from './player/player';
+import { PlayerService } from './player/player.service';
 
 @Component({
   selector: 'app-root',

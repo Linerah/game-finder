@@ -1,7 +1,5 @@
-package com.game.finder.controller;
+package com.game.finder.player;
 
-import com.game.finder.domain.Player;
-import com.game.finder.service.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

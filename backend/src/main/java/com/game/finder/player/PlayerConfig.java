@@ -1,7 +1,5 @@
-package com.game.finder.config;
+package com.game.finder.player;
 
-import com.game.finder.domain.Player;
-import com.game.finder.repositories.PlayerRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

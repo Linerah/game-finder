@@ -1,6 +1,6 @@
-package com.game.finder.repositories;
+package com.game.finder.player;
 
-import com.game.finder.domain.Player;
+import com.game.finder.player.Player;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

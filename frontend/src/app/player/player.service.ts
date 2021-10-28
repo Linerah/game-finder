@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Player } from '../domain/player';
+import { Player } from './player';
 import { environment } from 'src/environments/environment';
 
 // This makes the service available for the app.
@@ -21,7 +21,7 @@ export class PlayerService {
     return this.http.post<Player>(`${this.apiServerUrl}/api/v1/player/add`, player);
   }
 
- 
+
   // To update email or name, add validators later ;P
   public updatePlayer(playerId: String, email: String, name: String) :Observable<Player> {
     if((email != null && email.length > 0) && (name != null && name.length > 0)){
@@ -33,9 +33,9 @@ export class PlayerService {
     else if(name != null && name.length > 0){
       return this.http.put<Player>(`${this.apiServerUrl}/api/v1/player/update/${playerId}`, {name: `${name}`});
     }
-    // this will not work, change it to an error statement. 
+    // this will not work, change it to an error statement.
     return this.http.put<Player>(`${this.apiServerUrl}/api/v1/player/update/${playerId}`, null);
-  
+
   }
 
   public deletePlayer(playerId: String) :Observable<void> {
