@@ -1,1 +1,172 @@
-/* You can add global styles to this file, and also import other style files */
+
+/*P.S. css at rul is flagging as unknown, but tailwind still works.
+        we have to find a way so that the project ignores it. */
+/*      To fix the issue, download Tailwind CSS plugin in intelliJ*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: WildWorld;
+  src: url("assets/fonts/WILD WORLD.otf") format("opentype");
+}
+
+body{
+  overflow-x: hidden;
+  @apply bg-background-purple m-0 p-0 ;
+}
+
+section{
+  @apply relative flex flex-col items-center justify-center;
+  min-height: 400px;
+  padding: 100px 20vw;
+  height: 100vh;
+  /*  cry remove the relative ;(*/
+}
+
+.hand-with-controller{
+  position: absolute;
+  width: 686.45px;
+  height: 609.19px;
+  left: 300px;
+  top: 345px;
+  transform: rotate(-0.55deg);
+  z-index: 5;
+}
+
+.about-container{
+  width: 1206px;
+  height: 560px;
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 2rem;
+  z-index: 2;
+  backdrop-filter: blur(2rem);
+  @apply flex flex-row justify-center items-center;
+  position: relative;
+
+}
+
+
+
+.about-person{
+  width: 422px;
+  height: 319px;
+  @apply rounded-md mr-24;
+}
+
+.about-paragraph{
+  font-family: sans-serif;
+  width: 438px;
+  height: 243px;
+  font-size: 20px;
+  @apply font-bold text-white pt-10;
+}
+
+.about-tittle{
+  font-family: WildWorld;
+  @apply  text-4xl font-bold text-test-blue animate-pulse;
+}
+
+.main-tittle{
+  font-size: 40px;
+  line-height: 110%;
+  font-family: WildWorld;
+  color: #B8EBFA;
+}
+
+.main-logo{
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  left: 12%;
+  top: 3%;
+  /*border-radius: 65px;*/
+  @apply rounded-full;
+}
+
+
+.nav-item{
+  font-family: WildWorld;
+  @apply
+  relative flex items-center justify-center
+  border-transparent border-2
+  rounded-2xl
+  h-12 w-32
+  pb-1.5 pt-1.5 pr-6 pl-6
+  ml-6 mr-6 mx-auto
+  text-xl not-italic bg-background-purple shadow-inner
+  hover:shadow-lg
+  hover:rounded-3xl
+  hover:bg-about-grey
+  hover:text-about-blue
+  hover:border-about-blue
+  transition-all ease-in-out duration-500
+  cursor-pointer;
+}
+
+.custom-shape-divider-top-1634946153 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1634946153 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 43px;
+}
+
+.custom-shape-divider-top-1634946153 .shape-fill {
+  fill: #9013FE;
+}
+
+.custom-shape-divider-bottom-1634946272 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-bottom-1634946272 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 128px;
+}
+
+.custom-shape-divider-bottom-1634946272 .shape-fill {
+  fill: #9013FE;
+}
+
+.custom-shape-divider-top-1635000037 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1635000037 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+
+.custom-shape-divider-top-1635000037 .shape-fill {
+  fill: #9013FE;
+}
+
