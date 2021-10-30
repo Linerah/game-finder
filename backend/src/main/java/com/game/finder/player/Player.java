@@ -1,101 +1,129 @@
 package com.game.finder.player;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Collection;
+import java.util.Collections;
 
 // to map player to DB:
+@Getter
+@Setter
+@EqualsAndHashCode
+@NoArgsConstructor
 @Entity //hibernate
 @Table  // table in database
-public class Player implements Serializable {
+public class Player implements Serializable, UserDetails {
     // The class going to be in different types of stream (JSON, object, ect..) with the DB.
     //That is why it implements Serializable, it helps the process.
-    @Id
     @SequenceGenerator(
             name= "player_sequence",
             sequenceName = "player_sequence",
             allocationSize = 1
 
     )
+    @Id
     @GeneratedValue(
             strategy =  GenerationType.SEQUENCE,
             generator = "player_sequence"
     )
     //some variables may change, because they are related to authentication. ;)
     private Long id;
-    private String name;
-    private String username;
+    private String firstName;
+    private String lastName;
     private String email;
+    private String password;
     private LocalDate dateOfBirth;
+    @Enumerated(EnumType.STRING)
+    private AppPlayerRole appPlayerRole;
+    private Boolean locked = false;
+    private Boolean enabled = false;
     @Transient //makes it so there is no column in DB for the value below
     private Integer age;
 
-    public Player() {
-    }
-
-    public Player(Long id, String name, String username, String email, LocalDate dateOfBirth) {
-        this.id = id;
-        this.name = name;
-        this.username = username;
+    public Player(String name,
+                  String username,
+                  String email, String password,
+                  AppPlayerRole appPlayerRole) {
+        this.firstName = name;
+        this.lastName = username;
         this.email = email;
-        this.dateOfBirth = dateOfBirth;
-
+        this.password = password;
+        this.appPlayerRole = appPlayerRole;
     }
 
-    //  Constructor without id, because postgres generates one. ;P
-    public Player(String name, String username, String email, LocalDate dateOfBirth) {
-        this.name = name;
-        this.username = username;
-        this.email = email;
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
+    public Player(Long id,
+                  String firstName,
+                  String lastName,
+                  String email,
+                  String password,
+                  LocalDate dateOfBirth,
+                  AppPlayerRole appPlayerRole) {
         this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.dateOfBirth = dateOfBirth;
+        this.appPlayerRole = appPlayerRole;
     }
 
-    public String getName() {
-        return name;
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        SimpleGrantedAuthority authority = new SimpleGrantedAuthority(appPlayerRole.name());
+        return Collections.singleton(authority);
     }
 
-    public void setName(String name) {
-        this.name = name;
+    @Override
+    public String getPassword() {
+        return password;
     }
 
+    @Override
     public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public LocalDate getDateOfBirth() {
-        return dateOfBirth;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return !locked;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return enabled;
     }
 
     public Integer getAge() {
         return Period.between(this.dateOfBirth, LocalDate.now()).getYears();
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
-    }
+
 }
