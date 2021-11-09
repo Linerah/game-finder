@@ -42,13 +42,13 @@ public class Player implements Serializable, UserDetails {
     private String lastName;
     private String email;
     private String password;
-    private LocalDate dateOfBirth;
+//    private LocalDate dateOfBirth;
     @Enumerated(EnumType.STRING)
     private AppPlayerRole appPlayerRole;
     private Boolean locked = false;
     private Boolean enabled = false;
-    @Transient //makes it so there is no column in DB for the value below
-    private Integer age;
+//    @Transient //makes it so there is no column in DB for the value below
+//    private Integer age;
 
     public Player(String name,
                   String username,
@@ -66,14 +66,14 @@ public class Player implements Serializable, UserDetails {
                   String lastName,
                   String email,
                   String password,
-                  LocalDate dateOfBirth,
+//                  LocalDate dateOfBirth,
                   AppPlayerRole appPlayerRole) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-        this.dateOfBirth = dateOfBirth;
+//        this.dateOfBirth = dateOfBirth;
         this.appPlayerRole = appPlayerRole;
     }
 
@@ -121,9 +121,9 @@ public class Player implements Serializable, UserDetails {
         return enabled;
     }
 
-    public Integer getAge() {
-        return Period.between(this.dateOfBirth, LocalDate.now()).getYears();
-    }
+//    public Integer getAge() {
+//        return Period.between(this.dateOfBirth, LocalDate.now()).getYears();
+//    }
 
 
 }

@@ -1,40 +1,25 @@
-import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { Player } from './player/player';
-import { PlayerService } from './player/player.service';
+import { Component } from '@angular/core';
+import { AppService } from './app.service';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import {finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  public players!: Player[]; // the '!' lets angular know that the variable will be initialized.
-  public title = "gamefinderapp";
-
-  // Dependency Injection of the Service
-  constructor(private playerService: PlayerService){}
-
-  //this will run whenever the component is initialized.
-  ngOnInit(){
-    this.getPlayers();
-    // this.loadScript();
+export class AppComponent {
+  title= 'gameFinderApp';
+  constructor(private app: AppService, private http: HttpClient, private router: Router) {
+    this.app.authenticate(undefined, undefined);
+  }
+  logout() {
+    this.http.post('logout', {}).pipe(finalize(() => {
+      this.app.authenticated = false;
+      this.router.navigateByUrl('/login');
+    })).subscribe();
   }
 
-  public loadScript(){
-      let node = document.createElement('script'); // creates the script tag
-      node.src = 'https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js'; // sets the source (insert url in between quotes)
-      document.getElementsByTagName('head')[0].appendChild(node);
-
-  }
-  public getPlayers(): void {
-    this.playerService.getPlayers().subscribe(
-      (response: Player[]) =>{
-        this.players = response;
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    );
-  }
+  authenticated() { return this.app.authenticated; }
 }

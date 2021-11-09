@@ -1,1 +1,19 @@
-<app-landing-page-container></app-landing-page-container>
+<div *ngIf="!authenticated()" class="z-10 absolute flex items-center justify-center space-x-20 left-1/4 top-16">
+  <div  class=" flex flex-row text-white space-x-6">
+    <i class="nav-item">about</i>
+    <i class="nav-item">help</i>
+    <i class="nav-item">features</i>
+    <i class="nav-item"><a routerLinkActive="active" routerLink="/signup">signup</a></i>
+  </div>
+
+  <div class="flex flex-row m-0
+           text-white">
+    <i class="main-login"><a routerLinkActive="active" routerLink="/login">login</a></i>
+  </div>
+
+</div>
+
+<a *ngIf="!authenticated()" routerLinkActive="active" routerLink="landing"><img class="main-logo absolute left-40 top-5" src="assets/images/logo.png" alt="logo"></a>
+
+
+<router-outlet></router-outlet>

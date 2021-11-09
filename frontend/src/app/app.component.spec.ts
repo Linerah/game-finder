@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'gamefinderapp'`, () => {
+  it(`should have as title 'gameFinderApp'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('gamefinderapp');
+    expect(app.title).toEqual('gameFinderApp');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('gamefinderapp app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('gameFinderApp app is running!');
   });
 });
