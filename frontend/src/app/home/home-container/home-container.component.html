@@ -1,0 +1,11 @@
+<section class=" border-background-purple bg-about-purple border-4 ">
+  <app-home-sidebar (toggleFormEvent)="this.formActive = ($event)" class=" flex flex-col text-white space-y-6 items-center mr-7 w-44 bg-background-purple">
+  </app-home-sidebar>
+
+  <div class="flex flex-col w-screen mr-7">
+    <app-home-post class="forum mt-7" *ngIf="this.formActive"></app-home-post>
+    <app-home-forum class="forum mt-7 mb-7 h-screen overflow-y-auto ">
+    </app-home-forum>
+  </div>
+
+</section>

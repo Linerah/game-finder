@@ -10,16 +10,24 @@ import{LandingPageModule} from './landing-page/landing-page.module';
 import { LoginComponent } from './login/login.component';
 import {RouterModule, Routes} from "@angular/router";
 import {LandingPageContainerComponent} from "./landing-page/landing-page-container/landing-page-container.component";
-import {FormsModule} from "@angular/forms";
-import { HomeComponent } from './home/home.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { HomeContainerComponent } from './home/home-container/home-container.component';
 import {AuthGuard} from "./auth-guard/auth-guard.service";
 import { SignupComponent } from './signup/signup.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
+import { HomeSidebarComponent } from './home/home-sidebar/home-sidebar.component';
+import { HomeForumComponent } from './home/home-forum/home-forum.component';
+import { HomePostComponent } from './home/home-post/home-post.component';
+import{ HomeModule } from './home/home.module';
+
+
+
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'landing'},
   { path: 'landing', component: LandingPageContainerComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'home', canActivate: [AuthGuard] ,component: HomeComponent},
+  { path: 'home', canActivate: [AuthGuard] ,component: HomeContainerComponent},
   { path:'signup', component: SignupComponent},
 
 ];
@@ -40,8 +48,11 @@ export class XhrInterceptor implements HttpInterceptor {
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent,
+    HomeContainerComponent,
     SignupComponent,
+    HomeSidebarComponent,
+    HomeForumComponent,
+    HomePostComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -51,7 +62,10 @@ export class XhrInterceptor implements HttpInterceptor {
     BrowserAnimationsModule,
     MatSliderModule,
     LandingPageModule,
-    FormsModule
+    FormsModule,
+    EditorModule,
+    ReactiveFormsModule,
+    HomeModule
   ],
   providers: [AppService, { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true }],
   bootstrap: [AppComponent]
