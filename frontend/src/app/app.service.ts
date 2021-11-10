@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {environment} from "../environments/environment";
+import {Observable} from "rxjs";
+import {Player} from "./player/player";
 
 @Injectable()
 export class AppService {
@@ -26,6 +28,14 @@ export class AppService {
       return callback && callback();
     });
 
+  }
+
+  public getPosts() :Observable<any[]>{
+    return this.http.get<any[]>(`${this.direction}/posts`);
+  }
+
+  public submitPost(post: any): Observable<Object>{
+    return this.http.post(`${this.direction}/post`, post);
   }
 
 }

@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'landing'},
   { path: 'landing', component: LandingPageContainerComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'home', canActivate: [AuthGuard] ,component: HomeComponent},
+  { path: 'home', canActivate: [AuthGuard] ,component: HomeContainerComponent},
   { path:'signup', component: SignupComponent},
 
 ];
@@ -40,7 +40,7 @@ export class XhrInterceptor implements HttpInterceptor {
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent,
+    HomeContainerComponent,
     SignupComponent,
   ],
   imports: [

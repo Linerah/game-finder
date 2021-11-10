@@ -17,14 +17,13 @@ body{
 }
 
 section{
-  @apply relative flex flex-col items-center justify-center;
+  @apply relative flex;
   min-height: 400px;
-  padding: 100px 20vw;
   height: 100vh;
   /*  cry remove the relative ;(*/
 }
 
-form{
+.landing-form{
   position: relative;
   font-family: WildWorld;
   width: 35vw;
@@ -71,6 +70,18 @@ form{
   @apply flex flex-row justify-center items-center;
   position: relative;
 
+}
+
+.forum{
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 2rem;
+  z-index: 2;
+  backdrop-filter: blur(2rem);
 }
 
 
