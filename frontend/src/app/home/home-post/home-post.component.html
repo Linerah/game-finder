@@ -1,0 +1,21 @@
+<div class="add-post-content flex flex-col items-center">
+  <div class="container">
+    <form action="" class="">
+      <div class="form-group">
+        <label class="post-title">Title:</label>
+        <br>
+        <input type="text" class="form-control" placeholder="Title">
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="casual" value="Casual">
+        <label for="casual">Casual</label>
+        <input type="checkbox" id="ranked" value="Ranked">
+        <label for="casual">Ranked</label>
+        <editor apiKey="test" [init]="{plugins: 'link'}"></editor>
+      </div>
+      <div class="form-group flex flex-row-reverse">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form >
+  </div>
+</div>
