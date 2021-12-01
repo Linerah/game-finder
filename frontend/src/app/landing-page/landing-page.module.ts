@@ -4,7 +4,6 @@ import { LandingPageContainerComponent } from './landing-page-container/landing-
 import { LandingPageAboutComponent } from './landing-page-about/landing-page-about.component';
 import { LandingPageHelpComponent } from './landing-page-help/landing-page-help.component';
 import { LandingPageMainComponent } from './landing-page-main/landing-page-main.component';
-import { LandingPageNavComponent } from './landing-page-nav/landing-page-nav.component';
 
 
 
@@ -14,10 +13,9 @@ import { LandingPageNavComponent } from './landing-page-nav/landing-page-nav.com
     LandingPageAboutComponent,
     LandingPageHelpComponent,
     LandingPageMainComponent,
-    LandingPageNavComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
     LandingPageContainerComponent

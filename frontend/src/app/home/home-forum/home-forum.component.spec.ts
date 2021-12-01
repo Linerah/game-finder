@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LandingPageNavComponent } from './landing-page-nav.component';
+import { HomeForumComponent } from './home-forum.component';
 
-describe('LandingPageNavComponent', () => {
-  let component: LandingPageNavComponent;
-  let fixture: ComponentFixture<LandingPageNavComponent>;
+describe('HomeForumComponent', () => {
+  let component: HomeForumComponent;
+  let fixture: ComponentFixture<HomeForumComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LandingPageNavComponent ]
+      declarations: [ HomeForumComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LandingPageNavComponent);
+    fixture = TestBed.createComponent(HomeForumComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -17,11 +17,32 @@ body{
 }
 
 section{
-  @apply relative flex flex-col items-center justify-center;
+  @apply relative flex;
   min-height: 400px;
-  padding: 100px 20vw;
   height: 100vh;
   /*  cry remove the relative ;(*/
+}
+
+.landing-form{
+  position: relative;
+  font-family: WildWorld;
+  width: 35vw;
+  height: 60vh;
+
+  margin: 0 auto;
+  top: 30vh;
+
+  /* 2 */
+
+  background: #393939;
+  /* 4 */
+
+  border: 1px solid #B8EBFA;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+
+  @apply flex flex-col items-center justify-center space-y-6;
 }
 
 .hand-with-controller{
@@ -49,6 +70,18 @@ section{
   @apply flex flex-row justify-center items-center;
   position: relative;
 
+}
+
+.forum{
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 2rem;
+  z-index: 2;
+  backdrop-filter: blur(2rem);
 }
 
 
@@ -80,13 +113,33 @@ section{
 }
 
 .main-logo{
-  position: absolute;
   width: 160px;
   height: 160px;
-  left: 12%;
-  top: 3%;
   /*border-radius: 65px;*/
   @apply rounded-full;
+}
+
+.main-login{
+  font-family: WildWorld;
+  @apply
+  relative flex items-center justify-center
+  border-transparent border-2
+  rounded-2xl
+  h-12 w-32
+  pb-1.5 pt-1.5 pr-6 pl-6
+  ml-6 mr-6 mx-auto
+  text-xl not-italic bg-background-purple shadow-inner
+  hover:shadow-lg
+  hover:rounded-3xl
+  hover:bg-about-grey
+  hover:text-about-blue
+  hover:border-about-blue
+  transition-all ease-in-out duration-500
+  cursor-pointer;
+}
+
+.login{
+
 }
 
 
@@ -98,7 +151,7 @@ section{
   rounded-2xl
   h-12 w-32
   pb-1.5 pt-1.5 pr-6 pl-6
-  ml-6 mr-6 mx-auto
+  /*ml-6 mr-6 mx-auto*/
   text-xl not-italic bg-background-purple shadow-inner
   hover:shadow-lg
   hover:rounded-3xl
